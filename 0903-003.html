@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>0903-003 :: expanding action button</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./style_003.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<span>inspired by <a href="https://dribbble.com/shots/1928064-Secret-Project">Anton Aheichanka</a></span>
+
+<div class="container startup">
+	<i class="material-icons back">close</i>
+	<h1>Text</h1>
+	<p>more text</p>
+	<div class="ball">
+		<a href="#"><i class="material-icons first">create</i></a>
+		<a href="#"><i class="material-icons second">message</i></a>
+		<a href="#"><i class="material-icons third">alarm</i></a>
+		<?xml version="1.0" encoding="utf-8"?>
+		<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 width="30px" height="30px" viewBox="0 0 30 30" enable-background="new 0 0 30 30" xml:space="preserve">
+		<polygon fill="#FFFFFF" points="30,14.5 15.5,14.5 15.5,0 14.5,0 14.5,14.5 0,14.5 0,15.5 14.5,15.5 14.5,30 15.5,30 15.5,15.5 
+			30,15.5 "/>
+		</svg>
+	</div>	
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <!-- <script  src="./script.js"></script> -->
+  <script>
+   $(function(){
+      function showpanel(){
+         $(".container").removeClass("startup");
+         $(".ball").addClass("active").delay(2000).queue(function(next){
+            $(this).removeClass("active");
+            next();
+         });
+
+      }
+      $(".ball").click(function(){
+         $(this).toggleClass("active");
+      });
+
+      $("i").click(function(){
+         $(".ball").addClass("expand");
+         $(".back").addClass("show");
+      });
+
+      $(".back").click(function(){
+         $(this).removeClass("show");
+         $(".ball").removeClass("expand");
+         $(".container").addClass("shake").delay(500).queue(function(next){
+            $(this).removeClass("shake");
+            next();
+         });
+      });
+      setTimeout(showpanel, 1800);
+
+   });
+  </script>
+
+</body>
+</html>
