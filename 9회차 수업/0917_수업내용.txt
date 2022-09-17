@@ -1,0 +1,90 @@
+0917일 수업내용
+---------------------
+
+let 참조변수 = new Sting(문자형 데이터);
+
+chrtAt(index)=>문자열에서 인덱스 번호에 맞는것을 말함.
+
+let str = today is saturday
+
+str.charAt(2) =>문자열"d"를 반환한다.
+
+=============================
+
+- indexOf("찾을문자")
+
+let str = "today is saturday today is funny day";
+
+**index의 띄어쓰기도 모두 계산한다.
+
+str.indexOf("today") => 인덱스 번호 "0"반환
+
+ex)let str = "if today is saturday~";인경우
+str.indexOf("today") => 인덱스 번호 "3"반환
+
+- lastIndexOf("찾을문자")=> 뒤에서 부터 찾고, 인덱스는 처음부터 센다
+
+let str = "if today is saturday today is funny day";
+str.lastIndexOf("today") => 22
+
+- match("찾을문자") => indexOf("찾을문자")와 동일하게 왼쪽부터 찾을문자와 일치하는 문자를 찾지만, 찾는 문자가 없는경우 indexOf는 "-1"을 반환하고, match는 "null"값을 반환한다.
+
+- replace("바꿀문자","새문자")
+let str = "today is funny day";
+
+str.replace("funny","fun");=>funny를 fun으로 변경
+
+- search("찾을문자")
+
+- slice(3,7);
+
+let str = "today is funny day";
+
+str.slice(3,7) => index번호 7을 제외한 3,4,5,6이 있는 "ay is"를 반환.
+
+==============================================
+
+- substring(a,b) => a인덱스 부터 b인덱스 이전 구간의 문자를 반환한다.
+
+
+let str = "today is funny day";
+
+str.substing(3,7) => "ay i"
+str.substiring(3,-3) => "tod"
+str.substiring(3,-5) => "tod" => 음수는 모두 인덱스 0을 가리킨다.
+
+- substr(a,문자갯수) =>인덱스 a번째부터 문자갯수반환
+
+let str = "today is funny day";
+str.substr(3,2); => 인덱스 3에서부터 문자갯수 2개인 인덱스 3,4 "ay"반환
+
+================================================
+- split("문자")
+
+let str = "webkmobilek2022";
+str.split("k"); => "web""mobile""2022";
+
+================================================
+
+- toLowerCase();=> 대문자를 소문자로 바꾸는 메서드
+- toUpperCase();=> 소문자를 대문자로 바꾸는 메서드
+
+=================================================
+
+- concat("새로운문자") =>문자열에 새로운 문자열을 결합하는 메서드
+
+let str = "today is funny day";
+str.concat("lucky") =>문자열에 lucky를 추가하여 "today is funny daylucky"반환
+
+==================================================
+
+- charCodeAt(index) 문자열 index에 해당 문자의 아스키코드값을 반환하는 메서드
+
+
+- fromCharCode(아스키코드값): 아스키코드값에 해당하는 문자를 반환하는 메서드
+
+- trim() 문자의 앞 또는 뒤에 공백 문자열을 삭제하는 메서드 ->중간의 문자 공백은 관계 없음..
+
+
+
+
