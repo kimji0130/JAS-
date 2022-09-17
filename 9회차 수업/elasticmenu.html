@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure CSS Elastic Menu with CSS3</title>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+   body{
+      margin: 20px;
+      padding: 20px;
+      background: #f1f1f1;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+   .navi{
+   margin-top: 35px;
+   height: 40px;
+   font-size: 14px;
+   background: #5f5f5f;
+   }
+
+   ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+   }
+   .navi > li{
+      float: left;
+      position: relative;
+   }
+
+   .navi > li > a{
+      display: block;
+      width: 150px;
+      line-height: 40px;
+      font-size: 16px;
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.2s;
+   }
+   .navi > li > a:hover,
+   .navi > li:hover{
+      background: #8ac007;
+   }
+   .navi li ul {
+      position:absolute;
+      left:0;
+      background:#fff;
+      opacity: 0;
+      box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+   }
+   .navi li:hover ul{
+      opacity: 1;
+   }
+
+   .navi li ul li{
+      height: 0;
+      line-heihgt:0;
+      background: none;
+      opacity: 0;
+      border-top: 1px dotted #eaeaea;
+      transition: 0.2s;
+   }
+
+   .navi li:hover ul li{
+      height: 42px;
+      opacity: 1;
+      line-height: 42px;
+      text-align: center;
+      text-decoration: none;
+      border-top:1px dotted #eaeaea;
+   }
+   .navi li:hover ul li:last-child{
+      border-bottom: none;
+   }
+
+   .navi li ul li a{
+      /* filter: contrast(0); */
+      display: block;
+      width:150px;
+      line-height: 42px;
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      transition: 0.3s;
+   }
+
+   
+
+
+</style>
+</head>
+
+<body>
+<div class="container">
+	<h1 class="title">Pure CSS Elastic Menu</h1>
+	<ul class="navi">
+		<li>
+			<a href="#">HTML</a>
+			<ul>
+				<li><a href="#">HTML Tutorial</a></li>
+				<li><a href="#">HTML Forms</a></li>
+				<li><a href="#">HTML5</a></li>
+				<li><a href="#">HTML Graphics</a></li>
+				<li><a href="#">HTML Media</a></li>
+				<li><a href="#">HTML APIs</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">CSS</a>
+			<ul>
+				<li><a href="#">CSS Tutorial</a></li>
+				<li><a href="#">CSS3</a></li>
+				<li><a href="#">CSS Responsive</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">JavaScript</a>
+			<ul>
+				<li><a href="#">JS Tutorial</a></li>
+				<li><a href="#">JS Forms</a></li>
+				<li><a href="#">JS Objects</a></li>
+				<li><a href="#">JS Functions</a></li>
+				<li><a href="#">JS HTML DOM</a></li>
+				<li><a href="#">JS Brower BOM</a></li>
+				<li><a href="#">JS Libraries</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">jQuery</a>
+			<ul>
+				<li><a href="#">jQuery Tutorial</a></li>
+				<li><a href="#">jQuery Effects</a></li>
+				<li><a href="#">jQuery HTML</a></li>
+				<li><a href="#">jQuery Traversing</a></li>
+				<li><a href="#">jQuery AJAX</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
