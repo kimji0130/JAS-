@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JAS & jQuery</title>
+   <script>
+   //P.57
+   let name = prompt("당신의 이름은 무엇인가요?");
+   let height = prompt("키가 몇이에요?");
+   let weight = prompt("몸무게는요?");
+
+   let normal_w = (height -100) * 0.9 //평균체증
+   let result = weight >= normal_w -5 && weight <= normal_w +5; // 오차범위 ⨦ 5 , 산술연산자, 비교연산자, 논리연산자 사용 
+   result = result ? "적정 체중입니다." : "다이어트가 필요해요~"; //삼항 연산자로 도출하는 값
+   document.write(name + "님은 " + result);
+  
+
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

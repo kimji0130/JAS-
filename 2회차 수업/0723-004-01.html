@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>팝업창 만들기</title>
+   <script>
+      //p.115
+      
+      // window.open("https://www.apple.com","popup","width=450, height=450, left=250, top=100");
+
+
+      //p.113 setTimeout(function(){자바스크립트코드},일정시간간격);
+
+      let addNum = 0 //증가하는 숫자는 0;
+      let subNum = 1000;
+
+      let auto_1 = setTimeout(function(){//무한루틴 없이 한번만 반환하게 만드는것이 setTimeout
+         addNum++;//1씩 증가하는 것 "++"
+         console.log("addNum: " + addNum);
+      }, 3000);//3초에 한번씩 나오게 하는 것 
+
+      let auto_2 = setTimeout(function(){
+         subNum--;//1씩 증가하는 것 "++"
+         console.log("subNum: " + subNum);
+      }, 3000);
+
+
+
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

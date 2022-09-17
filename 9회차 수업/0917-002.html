@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 문자 객체 string_ob3.html </title>
+<script>
+	var userEmail = prompt("당신의 이메일 주소는?", "");
+	var arrUrl = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"];
+
+	var check1 = false;
+	var check2 = false;
+	/*false를 분기점으로 잡아놓고 true를 체크해서 넣는것으로 변경하고있음.
+	true와 false를 바꾸면 arrUrl을 확인하여 형식에 맞지 않아도 못잡음. @이후 내용을 안적어도 오류가 안남..
+	var userEmail = prompt("당신의 이메일 주소는?", "");
+	var arrUrl = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"];
+
+	var check1 = true;
+	var check2 = true;
+
+	if( userEmail.indexOf("@") > 0 ) { check1=false; }
+
+	for(var i = 0; i < arrUrl.length; i++) {
+		if( userEmail.indexOf(arrUrl[i]) > 0 ) {
+			check2 = false;
+		} 
+	}
+
+	if( check1 && check2 ) {
+		alert("이메일 형식이 잘못되었습니다.");
+	} else {
+		document.write( userEmail );
+	}
+	*/
+
+	if( userEmail.indexOf("@") > 0 ) { check1=true; }
+
+	for(var i = 0; i < arrUrl.length; i++) {
+		if( userEmail.indexOf(arrUrl[i]) > 0 ) {
+			check2 = true;
+		} 
+	}
+
+	if( check1 && check2 ) {
+		document.write( userEmail );
+	} else {
+		alert("이메일 형식이 잘못되었습니다.");
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

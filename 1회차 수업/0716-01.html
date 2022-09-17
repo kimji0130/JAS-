@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JAS & jQuery</title>
+   <script>
+      // w3c에서 head에 작성하는 것을 권고함.
+     //document.write("오늘은 토요일 입니다."); //document는 브라우저를 말함. write는 메서드라고 하며 기능을 말함.
+      // document.ready의 약자로 쓰는 function문이며, 함수 닫기 확인 주의! 
+      /*$(function(){
+         // let a == 10; a는 10과 같다.
+         let a = 10; //a에 10을 대입한다.
+         let b = "오늘은 토요일입니다."; //쌍따옴표 안에 있는것 무조건 문자형
+         let num = "100"; //숫자 100이 아니라 문자 100 이다.
+         let unha = "은하철도 999" //은하철도 999는 문자
+         let c = 10; //쌍따옴표가 없으므로 문자형아닌 숫자로 10으로 생각함.
+         let tag = "<h1>String</h1>" ; //문자열이긴 하지만 html태그를 포함하여 반영시키는 것 
+
+         let t = Number("500"); //문자형을 숫자형 데이터로 바꾸는것
+
+         let t = 10>=100; //false , boolean데이터: 숫자0과 null,undefined, 빈문자("")를 제외한 모든 데이터에 true반환함.
+      });*/
+      //------------------------------------------------------------------------------------------------------
+      //p.41
+      /*let num = 100;
+      let str = "자바스크립트";
+
+      document.write(typeof num + "<br>"); //num 의 자료의 형태 는 숫자형 (number)
+      document.write(typeof str); //str의 형태는 문자열 string
+      */
+     //----------------------------------------------------------------------------------
+     //p.42
+     /*let Num = 10;
+     document.write(num); //대소문자 구분하므로 num은 없음. false
+                        // Num 은 true
+      */
+      // $, _(언더바) : 특수기호에서는 변수명으로 사용되어질 수 있다.
+      //-----------------------------------------------------------------------
+      //p.44
+      let num1 = 15;
+      let num2 = 2;
+
+      let result;
+
+      result =  num1 + num2;
+      document.write(result + "<br>");//한칸 떨어짐. if. p태그 넣으면 2칸 떨어짐.
+
+      result = num1 - num2;
+      document.write(result + "<br>");
+      
+      result = num1 * num2;
+      document.write(result + "<br>");
+
+      result = num1 / num2;
+      document.write(result + "<br>");
+
+      result = num1 % num2;
+      document.write(result + "<br>");
+      
+
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

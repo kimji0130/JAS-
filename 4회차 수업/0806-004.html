@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스 & 제이쿼리</title>
+   <style>
+      /* ============== // 실무에서 어떻게 쓰이는지 실습!!===========    */
+      body{
+         font-family: Arial, Helvetica, sans-serif;
+      }
+      .overlay{
+         position: fixed;
+         top:0;
+         left:0;   
+         width:0;
+         height:100%;
+         background: rgba(0,0,0,0.9);
+         overflow-x: hidden;
+         transition:0.5s;
+      }
+
+      .overlay-content{
+         position:relative;
+         top:25%;
+         wight:100%;
+         text-align: center;
+         margin-top:30px;
+      }
+      .overlay-content a{
+         display: block;
+         padding:8px;
+         text-decoration: none;
+         font-size: 36px;
+         color:#818181;
+         transition: 0.3s;
+         
+      }
+      .overlay-content a:hover{
+         color:#fff;
+      }
+      #main{
+         transition:.5s;
+      }
+      #main button{
+         position: relative;
+         top:25%;
+         text-align: center;
+         width:250px;
+         background:rgba(0,0,0,0.5);
+         margin-top: 30px;
+         border:none;
+         /* border:1px solid red; */
+         outline: none;
+         padding:8px;
+         color:#fff;
+         cursor: pointer;
+      }
+
+      .closebtn{
+         position: absolute;
+         top:20px;
+         right:45px;
+         font-size: 60px;
+         color:#fff;
+         text-decoration: none;
+      }
+
+   </style>
+</head>
+<body>
+
+   <div id="myNav" class="overlay">
+      <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+         <a href="">About</a>
+         <a href="">Service</a>
+         <a href="">Client</a>
+         <a href="">Contact</a>
+      </div>
+   </div>
+   <div id="main">
+      <button class="openbtn" onclick="openNav()">☰ open SideBar</button>
+   </div>
+
+   
+
+   <script>
+     /*--------------------------------------------------------------------------*/
+     // 안밀리는 형태
+     function openNav(){
+         document.getElementById("myNav").style.width = "250px";//바닐라에서는 css를 style로 표현
+         document.getElementById("myNav").style.marginLeft = "250px";
+      }
+      
+      function closeNav(){
+         document.getElementById("myNav").style.width = "0";
+         document.getElementById("myNav").style.marginLeft = "0";
+         
+      }
+      /*------------------------------------------------------------------------*/
+      // 밀리는 형태
+      function openNav(){
+         document.getElementById("myNav").style.width = "250px";//바닐라에서는 css를 style로 표현
+         document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav(){
+         document.getElementById("myNav").style.width = "0";
+         document.getElementById("main").style.marginLeft = "0";
+         
+      }
+
+   </script>
+
+
+</body>
+</html>

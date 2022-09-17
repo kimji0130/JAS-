@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스& 제이쿼리</title>
+   <script>
+      let today = new Date();
+
+      //현재 날짜가 어떻게 되나
+      let nowMonth = today.getMonth()+1, //getMonth 합수는 0(1월)부터 11(12)월까지의 정수를 반환하기 때문에 +1을 꼭 해줘야한다.
+         nowDate = today.getDate(),
+         nowDay = today.getDay();
+
+         document.write("<h1>오늘은 날짜는 몇일인가요?</h1>");
+         document.write("현재 월: " + nowMonth + " 월" + "<br>" );
+         document.write("현재 일: " + nowDate + " 일" + "<br>" );
+         document.write("현재 요일: " + nowDay + " 요일" + "<br>" );
+
+
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

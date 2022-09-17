@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스 & 제이쿼리</title>
+   <style>
+      /* ============== // 실무에서 어떻게 쓰이는지 실습!!===========    */
+      body{
+         height:10000px;
+      }
+      #myBtn{
+         /* display: block; */
+         display: none;
+         position: fixed;
+         bottom:50px;
+         right:50px;
+         padding:15px;
+         font-size: 18px;
+         border:none;
+         border-radius: 4px;
+         outline:none;
+         background:red;
+         color:#fff;
+         cursor: pointer;
+         
+      }
+
+
+   </style>
+</head>
+<body>
+   <button id="myBtn" onclick="topFunction()">TOP</button>
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum deleniti in modi aliquam, harum consectetur enim, ipsa unde, aut nihil soluta pariatur ad perspiciatis tenetur quidem? Nisi ipsam aut ut.</p>
+
+   <script>
+     /*--------------------------------------------------------------------------*/
+     let mybutton = document.getElementById("myBtn");
+
+     window.onscroll = function (){
+      scrollFunction()
+   };
+
+   function scrollFunction(){
+      if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+         //단위값 적지 않으면 무조건 px, 논리 연산자로 바디 스크롤탑 해도 적용되는데 굳이 2가지를 적어주는이유는???>>>> 크로스브라우징때문!!!!
+         mybutton.style.display = "block";
+      } else{
+         mybutton.style.display = "none";
+
+      }
+   }
+
+   function topFunction(){
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop =  0;
+      //크로스브라우징을 위해서 documentElement를 한번 더 적어준다.
+   }
+   </script>
+
+
+</body>
+</html>

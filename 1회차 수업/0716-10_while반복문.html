@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JAS & jQuery</title>
+   <style>
+      .blue{
+         color:blue;
+      }
+      .red{
+         color:red;
+      }
+   </style>
+   <script>
+   //P.74-76
+/*
+   let i =10;
+   while(i <=100){
+      document.write("안녕하세요" + i + "<br>");
+      i++;//1씩 증가시켜라
+   }
+*/
+   // let i = 1;
+   // while(i<=60){//60가지 중 2와6의 배수?
+   //    if( i % 2 == 0 && i % 6 == 0){
+   //       document.write(i + "<br>");
+   //    }
+   //    i++;
+   // }
+
+   //tag를 통해서도 예제를 이용할 수 있다.
+   let i = 20;
+   while( i >= 10){
+      if( i % 2 == 0 ){
+         document.write("<p class='blue'>" + i + "</p>");
+      } else {
+         document.write("<p class='red'>" + i + "</p>");
+      }
+      i--;
+   }
+
+
+   </script>
+</head>
+<body>
+</body>
+</html>

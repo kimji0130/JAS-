@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스 & 제이쿼리</title>
+   <style>
+      /* ============== // 실무에서 어떻게 쓰이는지 실습!!===========    */
+      body{
+         margin: 0;
+         background:#f1f1f1;
+         font-family: Arial, Helvetica, sans-serif;
+         height:5000px;
+      }
+      a, a:visited, a:focus{
+         text-decoration: none;
+      }
+      
+     
+     #navbar{
+      display: block;
+      position:fixed;
+      top:0px;/*처음에 숨겨져 있어야 하므로 */
+      width: 100%;
+      background: #333;
+      color:#fff;
+      transition: 0.3s;
+     }
+
+     #navbar a{
+      display: block;
+      float:left;
+      padding:15px;
+      color:#f2f2f2;
+      text-align: center;
+      font-size: 1em;/*16px*/
+     }
+
+
+   </style>
+</head>
+<body>
+  <div id="navbar">
+   <a href="#">Home</a>
+   <a href="#">News</a>
+   <a href="#">Contact</a>
+  </div>
+
+  <div class="" style="font-size: 30px; padding-top:50px;" id="content">
+   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic totam, suscipit modi iusto natus, mollitia excepturi reiciendis odit quos maiores minus perspiciatis enim recusandae minima soluta molestias, explicabo quisquam fugit.
+  </div>
+
+   <script>
+     /*--------------------------------------------------------------------------*/
+     let prevScrollPos = window.pageYOffset;
+     window.onscroll = function (){
+      let currentScrollPos = window.pageYOffset;
+
+      //이전 스크롤 위치보다 현재 스크롤위치가 클때
+      if(prevScrollPos < currentScrollPos){
+         document.getElementById("navbar").style.top = "-50px";
+      } else{
+         document.getElementById("navbar").style.top = "0";
+      }
+   };
+      
+   //   function scrollFunction(){
+   //    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+   //       document.getElementById("navbar").style.top = "-50px";
+   //    } else{
+   //       document.getElementById("navbar").style.top = "0px";
+   //    }
+   //   }
+      
+     
+     
+   </script>
+
+
+</body>
+</html>

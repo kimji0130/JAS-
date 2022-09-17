@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스& 제이쿼리</title>
+   <script>
+      //p.144
+
+      /*?? 선생님이 졸고 있나ㅡㅡ 왜 outerFunction을 호출안하는 코드를 적고 그냥 넘어가지??
+
+      function outerFunction(){//outerFunction 외부함수
+
+         var num;//var 변수명; -> 지역변수로 innerfunction이 쓰는 변수가 된다.
+         function innerFunction(){
+            document.write("토요일은 즐겁다. 하지만, 수업이다.");//스크립트 코드
+         }
+         innerFunction();
+         //내부함수
+         
+      }
+      설명안해주시나여?/??
+
+      */
+
+      var num= 500;
+      function fncTest(){
+         var num = 200;
+         document.write(num + "<br>");
+      }
+
+      fncTest();
+      document.write(num);
+
+
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

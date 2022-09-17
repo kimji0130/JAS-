@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>basic :: JavaScript example</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<!-- 이미지 add,remove 버튼조작하여 버튼 클릭시마다 위,아래로 움직이기 -->
+<style>
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+button {
+	position: relative;
+	z-index: 1000;
+	padding: 5px 15px;
+	background-color: #ccc;
+	color: #000;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+button:hover {
+	background-color: #888;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 35px;
+}
+img[alt=lion] {
+	display: block;
+	margin-top: 50px;
+	width: 240px;
+	height: 240px;
+	transition: all 0.4s;
+}
+</style>
+
+<!-- 무조건 hardcording할것!! -->
+<script>
+	window.addEventListener("load", function(){
+		let y = 50;
+		let topBtn = document.getElementById("top");
+		let bottomBtn = document.getElementById("bottom");
+		let container = document.getElementsByClassName("container")[0];
+
+		for(let i = 0; i < container.children.length; i++){
+			if(container.children[i].className == "lion"){
+				var lion = container.children[i];
+			}
+		}
+
+		topBtn.addEventListener("click", function(){
+			y = y - 100;/* y => let으로 50px을 잡아놓음. top을 눌렀을때 위로 올라가라!*/
+			/*바닐라자바스크립트에서는 css를 style로 작성함. ex)margin-top=> marginTop으로 작성*/
+			lion.style.marginTop = y+"px";/*px로 인식할 수 있도록*/
+		});
+
+		bottomBtn.addEventListener("click", function(){
+			y = y + 100;
+			lion.style.marginTop = y+"px";/*px로 인식할 수 있도록*/
+		});
+
+
+
+	});
+
+
+   // 주의! end of input부터 잘 챙기기!!!
+   // 1. 변수를 뭘로 할지 잘 결정할것!
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript example</h1>
+<div class="container">
+	<button id="top">Top</button>
+	<button id="bottom">Bottom</button>
+	<img src="images/lion.gif" alt="lion" class="lion">
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스 & 제이쿼리</title>
+   <style>
+      /* ============== // 실무에서 어떻게 쓰이는지 실습!!===========    */
+      
+      #text{
+         display: none;
+         color:red;
+      }
+      input:focus::-webkit-input-placeholder {color:transparent; }
+
+      /*HTML5 input 클릭하면 글씨가 사라지고 바탕을 누르면 다시 표시되게 하는 방법
+         출처: https://rgy0409.tistory.com/3029 [친절한효자손 취미생활:티스토리]
+
+         클릭시 사라지는 placeholder
+         input:focus::-webkit-input-placeholder {color:transparent; }
+         출처: https://1bobby.tistory.com/33 [1bobby:티스토리]
+
+
+      */
+   </style>
+</head>
+<body>
+   <h1>Detect Caps Lock</h1>
+   <p>Press the "Caps Lock": key inside the input field to trigger the function.</p>
+
+   <input id="myInput" placeholder="소문자로 입력하세요.">
+   <p id="text">Warning!! Caps lock is ON!!</p>
+   
+   <script>
+      let input = document.getElementById("myInput");
+      let text = document.getElementById("text"); 
+      input.addEventListener("keyup", function(e){ //p.272 참고
+         if(e.getModifierState("CapsLock")){
+            text.style.display = "block";
+         } else{
+            text.style.display = "none";
+         }
+
+      });
+     
+   </script>
+
+
+</body>
+</html>

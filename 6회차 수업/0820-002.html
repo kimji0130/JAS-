@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contents Load More</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<!-- jQuery cdn을 적고 그 이후에 UI를 cdn넣어줘야함. -->
+   <style>
+      body{
+         margin:0; padding:0;
+      }
+      .flex{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+      }
+    .content{
+      display: none;/*display:none으로 두고 jQuery로 처리할 예정*/
+      margin: 5px;
+      width:45%;
+      height:100px;
+      line-height: 100px;
+      background: #aaa;
+      color:#fff;
+      border: 1px solid lightgray;
+      text-align: center;
+      
+    }
+    #loadmore{
+      display:block;
+      margin:20px auto;
+      padding:10px;
+      width: 200px;
+      background:dodgerblue;
+      color:#fff;
+      text-align: center;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      transition: .3s;
+    }
+    #loadmore:hover{
+      color:dodgerblue;
+      background: #fff;
+      border: 1px solid dodgerblue;
+      text-decoration: none;   
+    }
+    .noContent{
+      color: #000;
+      background:gray;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration:none;
+    }
+    /*오류!!====================================
+     noContent에 important를 넣어야 되며, 마지막에 와서 nocontent인 경우 버튼이 hover가 안되어야하는데 hover 됨 */
+     
+    </style>
+
+</head>
+<body>
+    <script>
+       $(function(){
+          $(".content").slice(0,6).show();
+          $("#loadmore").on("click", function(){
+             $(".content:hidden").slice(0,4).slideDown();/*hidden은 displayLnone 상태를 말하는것.*/
+             if($(".content:hidden").length == 0){
+                $("#loadmore").text("No content").addClass("noContent");
+             }
+          });
+ 
+       });
+       
+    </script>
+   <div class="container">
+      <div class="flex">
+         <div class="content">Box 1</div>
+         <div class="content">Box 2</div>
+         <div class="content">Box 3</div>
+         <div class="content">Box 4</div>
+         <div class="content">Box 5</div>
+         <div class="content">Box 6</div>
+         <div class="content">Box 7</div>
+         <div class="content">Box 8</div>
+         <div class="content">Box 9</div>
+         <div class="content">Box 10</div>
+         <div class="content">Box 11</div>
+         <div class="content">Box 12</div>
+         <div class="content">Box 13</div>
+         <div class="content">Box 14</div>
+         <div class="content">Box 15</div>
+         <div class="content">Box 16</div>
+      </div>
+      <a href="#" id="loadmore">Load More</a>
+   </div>
+
+</body>
+</html>

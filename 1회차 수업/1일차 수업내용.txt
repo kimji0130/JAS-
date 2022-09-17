@@ -1,0 +1,149 @@
+김종한 강사님
+	카카오톡: neo369369
+	H.P: 010.5945.2367, 010.4421.2367
+	mail: bbkjh930@hanyang.ac.kr
+
+네이버 카페 : https://cafe.naver.com/ezensl7
+
+자바스크립트 동적인 부분 구현하는 역할
+
+라이브러리: 도서관, 함수의 집합
+
+- <순서> -
+
+1.자바스크립트 문법(자바스크립트(순수바닐라자바스크립트 의미)-바닐라 자스)
+
+2.제이쿼리
+
+3.여러가지 트렌드에 맞는 예제
+
+	- 마지막주(10회차)는 평가이루어짐.
+-----------------------------------------------------------------------------
+
+* 제이쿼리 라이브러리가 없으면 제이쿼리는 작동하지 않는다.
+* 바닐라 자스 : 라이브러리가 필요없음.
+
+* method(메서드) 기능: ".method()"
+
+ex. 자동차의 기능과 속성 분류
+ 기능(method): 브레이크밟는기능, 
+ 속성: 
+  - 색상, 크기, 가격 등 기능과 관련없는 가지고 있는 성질
+  - length에서는 소괄호()가 안들어감. => length() = error.
+
+* 바닐라 자바스크립트 스크립팅 하는 용어들이 길다.
+
+ - $("#bbkjh") = document.getElementById("bbkjh")
+
+* 조건문 if else, for구문
+
+---------------------------------------------------------------------
+vue.js, react.js
+
+
+
+변수 (변하는 수) 
+1. 변수를 잘지정해야 스크립팅할 때 쉬워짐.
+2. 변수의 갯수가 4개 이상인 경우 => 어려워짐.
+3. 스크립트 작성방법(주의필요)
+ - 한줄에 하나의 실행문만 적고, ;(세미콜론)으로 마무리를 지어야함.
+ - 대소문자 철저히 구분하므로 error가 많이 나옴.
+ 
+4. 변수 선언시 무엇으로 선언할 것인지?? (var, let, const...)
+  
+  var a = 10;
+	> undefined
+  var a = 20;
+	> undefined 에러 없음
+  let a = 30;
+	>Uncaught SyntacError: Identifier 'a' has already been declared.
+	좀 더 정확한 내용과 정의를 필요로 함. 
+
+ - var
+  var는 변수 선언 방식에 있어서 큰 단점이 있음. 변수선언을 한번 더 선언함에도 불구하고, 에러가 나오지 않고 각기 다른 값이 출력되는것을 볼수 있다. 간단한 테스트는 편리하나 코드량이 많아지면 어디에 어떻게 사용되는지 파악이 힘들다.
+  ex. 
+  var name = 'bathingape'
+  console.log(name) //bathingape
+
+  var name = 'javascript'
+  console.log(name) //javascript
+ 
+ - let
+  ES6이후, 보완하기 위해 추가 변수선언 방식.
+  var를 let으로 변경해보자.
+  ex.
+  let name = 'bathingape'
+  console.log(name) //bathingape
+
+  let name = 'javascript'
+  console.log(name) // Uncaught SyntaxError: Identifier 'name' has already been declared
+
+  name이 이미 선언되었다는 에러 메세지가 나오며, 변수 재선언이 안된다.
+  let은 재할당이 가능.
+  ex.
+   let name = 'bathingape'
+    console.log(name) // bathingape
+
+    let name = 'javascript'
+    console.log(name) 
+    // Uncaught SyntaxError: Identifier 'name' has already been declared
+
+    name = 'react'
+    console.log(name) //react
+
+ - const
+  변수 재선언, 변수 재할당 모두 불가능하다.
+  ex.
+   const name = 'bathingape'
+    console.log(name) // bathingape
+
+    const name = 'javascript'
+    console.log(name) 
+    // Uncaught SyntaxError: Identifier 'name' has already been declared
+
+    name = 'react'
+    console.log(name) 
+    //Uncaught TypeError: Assignment to constant variable.
+------------------------------------------------------------------------
+
+문자형 (String)
+숫자형 (Number)
+논리형 (Boolean) => a or b , a and b
+빈데이터 (Null)
+
+A > B;
+A < B;
+A >= B;
+A <= B;
+A == B;
+A != B;
+
+
+
+------------------------------------------------------------------------
+논리연산자
+|| OR 연산자, && AND 연산자 , ! NOT 연산자
+
+------------------------------------------------------------------------
+삼항 조건 연산자
+
+조건식 ? 자바스크립트 코드 1 : 자바스크립트 코드 2;
+조건식이 맞으면 코드1 반환 (true)
+조건식이 틀리면 코드2 반환 (false)
+
+------------------------------------------------------------------------
+카멜표기법 따를것
+getElementById
+
+-제어문--------------------------------------------------------------
+제어문의 종류
+ 1. 조건문(if문/else문/else if문)
+	if(조건식){
+	 자바스크립트 코드;
+	 실행문
+	}
+
+ 2. 선택문(switch case문)
+    : 정확히 값이 일치해야 정답이 도출되어지는 형태의 것 
+
+ 3. 반복문

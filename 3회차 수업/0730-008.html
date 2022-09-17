@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스 & 제이쿼리</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+   <script>
+      // $(function( ){
+      //    $("button").click(function(){
+      //       $("p").css({"color":"red"});
+      //    });
+
+      // });
+
+      $(function(){
+         $("button").on("click mouseover focus", function(){//tab 키를 눌러 장애인을 위한 접근성 고려
+            $("p").css({"color":"red"});
+         });
+         $("button").on("click focusout mouseleave", function(){//tab 키를 눌러 장애인을 위한 접근성 고려
+            $("p").css({"color":"blue"});
+         });
+
+         // $("button").off("click mouseover focus");
+      });
+   </script>
+   <style>
+   </style>
+   </head>
+   <body>
+      <button>on메서드</button>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi architecto officiis animi quae earum. Quos, itaque! Quod debitis quae placeat dolorem excepturi, eius accusamus! Nemo veritatis dignissimos natus tempore aliquam.</p>
+</body>
+</html>

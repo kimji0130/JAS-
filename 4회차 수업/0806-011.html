@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스 & 제이쿼리</title>
+   <style>
+     
+   </style>
+</head>
+<body>
+   <h1>타입라이터</h1>
+   <button onclick="typeWriter()">클릭해주세요.</button>
+   
+   <p id="demo"></p>
+   
+   <script>
+   let i = 0;
+   let txt = "안녕하세요. 우리는 휴가를 갈 수 있을까요? 반납해야할까요?"
+   let speed = 50; //secondes
+
+   function typeWriter(){
+      if(i < txt.length){
+         document.getElementById("demo").innerHTML += txt.charAt(i);
+         i++;
+         setTimeout(typeWriter, speed);
+      }
+   }
+   </script>
+</body>
+</html>

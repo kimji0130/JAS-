@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>basic :: JavaScript example</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<style>
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 35px;
+	min-width: 440px;
+}
+.controller {
+	padding-top: 20px;
+}
+.controller li {
+	display: inline-block;
+	margin-left: 8px;
+}
+.controller li:first-child {
+	margin-left: 0;
+}
+.controller li a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 20px;
+	transition: all 0.3s;
+}
+.controller li.on a {
+	width: 50px;
+	background-color: #8ac007;
+}
+</style>
+<script>
+   window.addEventListener("load", function(){
+      let container = document.getElementsByClassName("container")[0];
+      let controller = container.children[0];/*ul.controller을 가리킴, 여러개인 경우 여러개를 잡아줌. [0],[1],[2] 식으로 잡아줌*/
+      let liList = controller.children;/*li를 전체적으로 잡은거임. 그래서 []인덱스 번호를 안적어둔것.*/
+      let n = 0;
+      
+      /* ★★★주의!!  중첩 for문이 들어가므로 헷갈릴 수 있음!! */
+      /* ★★중요부분------- */
+      for (let i = 0; i < liList.length; i++) {
+         liList[i].index = i;
+       //------------------------------  
+         liList[i].addEventListener("click", function(e){
+            /*a태그 막아주기위해 function event를 적어주고 e.preventDefult문법을 사용하기위해 적어줌.*/
+            e.preventDefault();
+            n =  e.currentTarget.index;/* 지금 내가 클릭한 요소를 index로 끌어와서 n에 넣은 값을 의미 */
+
+            for(let j = 0; j < liList.length; j++){/*이미 i를 썻으므로 다시 쓸수 없다.*/
+               if(j == n){/*if 문에 add 로 잡고 else부분에 remove를 잡음. 
+                  j는 n과 같다. ==>n은 현재 클릭한요소를 잡기위해서 만듦.
+                  j는 지금 클릭한요소인 n 값이 liList[j]와 같으므로 내가 지금 클릭한 요소를 currentTarget으로 타겟잡음을 의미해줌*/
+                  /*중첩되는 이중 for문을 잡아주지 않으면 작동이 불가!!!!*/
+                  liList[j].classList.add("on");/*this에 addClass on과 동일*/
+               }
+               else{
+                  liList[j].classList.remove("on");
+               }
+
+            }
+
+         });
+
+         
+      }
+
+
+   });
+
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript example</h1>
+<div class="container">
+	<ul class="controller">
+		<li class="on"><a href=""></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+	</ul>
+</div>
+</body>
+</html>

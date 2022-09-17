@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>자스 & 제이쿼리</title>
+   <style>
+      /* ============== // 실무에서 어떻게 쓰이는지 실습!!===========    */
+     body{
+      color:gray;
+      background: #fff;
+      font-size: 25px;
+     }
+     .dark-mode{
+      color: #fff;
+      background: #000;
+     }
+     button{
+      cursor: pointer;
+     }
+   </style>
+</head>
+<body>
+   <h1>토글 다크모드 라이트모드</h1>
+   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minima facere consequuntur illo nemo impedit culpa eligendi in molestiae eaque quasi dolore, animi ipsum soluta atque perspiciatis. Possimus, repudiandae eligendi?</p>
+
+   <button onclick="myFunction()">Toggle Dark Mode</button>
+
+   <script>
+    function myFunction(){
+      let element = document.body;//window 아님.
+      element.classList.toggle("dark-mode");
+    }
+   </script>
+</body>
+</html>
